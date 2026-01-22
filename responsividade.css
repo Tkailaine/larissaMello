@@ -1,0 +1,266 @@
+@charset "UTF-8";
+
+ @media(max-width:600px){
+
+    header {
+        padding: 10px;
+    }
+    #logo {
+        width: 100px;
+    }
+
+    #bandeira{
+        width: 100%;
+    }
+
+    #bandeira div{
+        width: 80%;
+
+    }
+
+    .hero-text h1{
+        font-size: 1.8em;
+    }
+
+    .sobre-container {
+        flex-direction: column; /* empilha em coluna */
+        gap: 25px;
+        text-align: center;
+    }
+
+    .sobre-foto {
+        flex: 0 0 60%; /* foto maior e centralizada */
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .sobre-texto {
+        flex: 1 1 100%;
+    }
+
+    section{
+        width:80%;
+    }
+      
+      .servicos-lista {
+        grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+      }
+      .servico-item{
+        flex-direction: column;
+        text-align: center;
+      }
+
+    #container-form{
+        flex-direction: column-reverse;
+    }
+    #container-form p{
+        font-size: 1.2em;
+        width: 100%;
+        text-align: center;
+        
+    }
+
+    .grade-videos {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center; /* centraliza dois cards em tablet */
+    gap: 16px 16px;
+  }
+  .cartao-video {
+    max-width: 100%; /* ocupa a largura disponível na coluna */
+  }
+
+  .cartao-video .thumb {
+    height: 200px;
+  }
+
+
+    form{
+        width: 100%;
+    }
+}
+
+
+@media (min-width:601px) and (max-width: 768px) {
+    
+    header {
+        padding: 10px;
+    }
+    #logo {
+        width: 100px;
+    } 
+    section{
+        max-width: 90%;
+    }
+    
+    #bandeira div{
+       width: 80%;
+
+    }
+
+    .hero-text h1{
+        font-size: 2em;
+    }
+
+    .sobre-container {
+        flex-direction: column; /* empilha em coluna */
+        gap: 25px;
+        text-align: center;
+    }
+
+    .sobre-foto {
+        flex: 0 0 60%; /* foto maior e centralizada */
+        max-width: 60%;
+        margin: 0 auto;
+    }
+
+    .sobre-texto {
+        flex: 1 1 100%;
+    }
+
+     .servicos-lista {
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      }
+
+    #container-form{
+        flex-direction: column-reverse;
+    }
+    #container-form p{
+        width: 100%;
+        text-align: center;
+
+    }
+    .grade-videos {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center; /* centraliza dois cards em tablet */
+    gap: 16px 16px;
+  }
+  .cartao-video {
+    max-width: 100%; /* ocupa a largura disponível na coluna */
+  }
+
+  .cartao-video .thumb {
+    height: 250px;
+  }
+
+
+    form{
+        width: 350px;
+    }
+
+}
+     
+/* Médio (tablets e telas pequenas) */
+@media (min-width:769px) and  (max-width: 1024px) {
+    section{
+        max-width: 90%;
+    }
+
+    .hero-text h1{
+        font-size: 2.5em;
+    }
+    
+     #bandeira div{
+       width: 80%;
+
+    }
+
+    .sobre-container{
+        align-items: center;
+        justify-content: center;
+    }
+
+.sobre-foto {
+        flex: 0 0 50%; /* foto maior proporcionalmente em tablets */
+        max-width: 60%;
+    }
+
+    .sobre-texto {
+        flex: 1 1 60%;
+    }
+
+   
+
+    .sobre-texto {
+        flex: 1 1 100%;
+    }
+
+    .sobre-texto p {
+        font-size: 1rem;
+    }
+
+     .servicos-lista {
+        grid-template-columns: repeat(auto-fit,minmax(280px,2fr));
+      }
+
+    #container-form{
+        display: flex;
+        flex-direction: row;
+      
+    }
+    #container-form p{
+        width: 40%;
+        text-align: left;
+
+    }
+
+    
+
+    form{
+        width: 350px;
+    }
+
+    
+   
+
+}
+      
+/* Grande (laptops e desktops médios) */
+@media (min-width:1025px){
+    section{
+        width: 90%;
+        max-width: 1200px;
+    } 
+
+     #bandeira{
+        width: 100vw;
+        
+    }
+
+    #bandeira button a{
+    font-size: 1.2em;
+    font-weight: 400;
+    }
+
+    .hero-text h1{
+      font-size: 3em;
+      line-height: 1.3em;
+    }
+    
+    #bandeira div{
+       max-width: 80%;
+
+    }
+
+
+
+    .servicos-lista {
+    grid-template-columns: repeat(auto-fit,minmax(280px,2fr));
+    }
+
+
+    form{
+        width: 400px;
+    }
+
+     #container-form{
+        display: flex;
+        flex-direction: row;
+      
+    }
+    #container-form p{
+        width: 50%;
+        text-align: left;
+
+    }
+
+}
