@@ -109,8 +109,8 @@ header figure {
 .menu-mobile {
   position: fixed;
   top: 0;
-  right: -35%; /* escondido inicialmente */
-  width: 35%;
+  right: -50%; /* escondido inicialmente */
+  width:50%;
   height: 100%;
   background-color: #111;
   padding-top: 80px;
