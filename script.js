@@ -16,22 +16,21 @@ document.querySelectorAll('.menu-mobile a').forEach(link => {
 });
 
 // === PROJETOS AUDIOVISUAIS ===
-const projetos = [
-  { nome: "Os Saltimbancos Trapalhões - Rumo a Hollywood", link: "https://pt.wikipedia.org/w/index.php?curid=6730657", imagem: "imagens/saltimbrancos.jpg" },
-  { nome: "Ilhados com a Sogra", link: "https://pt.wikipedia.org/wiki/Ilhados_com_a_Sogra", imagem: "imagens/ilhados.jpg" },
+const projetos = [ 
+  { nome: "Mundo da Lua", link: "https://pt.wikipedia.org/w/index.php?curid=7626678", imagem: "imagens/mundodalua.jpg" }, { nome: "O Shaolin do Sertão", link: "https://pt.wikipedia.org/w/index.php?curid=6247830", imagem: "imagens/shaolin.jpg" }, 
+  { nome: "Perfekta: Uma Aventura da Escola de Gênios", link: "https://pt.wikipedia.org/wiki/Perfekta:_Uma_Aventura_da_Escola_de_G%C3%AAnios", imagem: "imagens/perfekta.jpg" },
+  { nome: "Shark Tank", link: "https://pt.wikipedia.org/w/index.php?curid=4640077", imagem: "imagens/shark.jpg" }, 
+  { nome: "Túnel do Amor", link: "https://pt.wikipedia.org/w/index.php?curid=7110650", imagem: "imagens/tuneldoamor.jpg" },{ nome: "Ilhados com a Sogra", link: "https://pt.wikipedia.org/wiki/Ilhados_com_a_Sogra", imagem: "imagens/ilhados.jpg" },
   { nome: "Tem que Suar", link: "https://pt.wikipedia.org/wiki/Tem_que_Suar", imagem: "imagens/temquesuar.jpeg" },
   { nome: "O Dono do Lar", link: "#", imagem: "imagens/donodolar.jpeg" },
-  { nome: "Mundo da Lua", link: "https://pt.wikipedia.org/w/index.php?curid=7626678", imagem: "imagens/mundodalua.jpg" },
-  { nome: "Shark Tank", link: "https://pt.wikipedia.org/w/index.php?curid=4640077", imagem: "imagens/shark.jpg" },
-  { nome: "O Shaolin do Sertão", link: "https://pt.wikipedia.org/w/index.php?curid=6247830", imagem: "imagens/shaolin.jpg" },
-  { nome: "Túnel do Amor", link: "https://pt.wikipedia.org/w/index.php?curid=7110650", imagem: "imagens/tuneldoamor.jpg" },
-  
-  { nome: "Perfekta: Uma Aventura da Escola de Gênios", link: "https://pt.wikipedia.org/wiki/Perfekta:_Uma_Aventura_da_Escola_de_G%C3%AAnios", imagem: "imagens/perfekta.jpg" },
+  { nome: "Olhar Indiscreto", link: "https://pt.wikipedia.org/wiki/Olhar_Indiscreto", imagem: "imagens/olharindiscreto.jpg" },
+  { nome: "O Escolhido", link: "https://pt.wikipedia.org/wiki/O_Escolhido", imagem: "imagens/oescolhido.jpg" },
+  { nome: "Os Saltimbancos Trapalhões - Rumo a Hollywood", link: "https://pt.wikipedia.org/w/index.php?curid=6730657", imagem: "imagens/saltimbrancos.jpg" },
   { nome: "Abdelmassih", link: "#", imagem: "imagens/abdelmassih.jpeg" },
   // Adicione mais projetos aqui
 ];
 let paginaAtual = 0;
-const MAX_POR_PAGINA = 4;
+const MAX_POR_PAGINA = 12;
 
 function renderizarProjetos() {
   const grade = document.getElementById("grade-videos");
@@ -114,4 +113,56 @@ function animarScroll() {
 window.addEventListener('scroll', animarScroll);
 window.addEventListener('load', animarScroll);
 
+
+// VER MAIS CARD ATUAÇÕES (HÍBRIDO: LISTA + TEXTO)
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.servico-card').forEach(card => {
+    const lista = card.querySelector('.servico-texto');
+    const texto = card.querySelector('.servico-texto-p');
+    const btn = card.querySelector('.btn-vermais');
+    if (!btn) return;
+
+    // === CASO LISTA ===
+    if (lista) {
+      const itens = Array.from(lista.children);
+      const limite = 2;
+
+      if (itens.length <= limite) {
+        btn.style.display = 'none';
+        return;
+      }
+
+      const fullHTML = lista.innerHTML;
+      lista.innerHTML = '';
+      itens.slice(0, limite).forEach(li => lista.appendChild(li));
+
+      btn.addEventListener('click', () => {
+        const expanded = btn.textContent === 'Ver menos';
+        lista.innerHTML = expanded ? '' : fullHTML;
+        if (expanded) itens.slice(0, limite).forEach(li => lista.appendChild(li));
+        btn.textContent = expanded ? 'Ver mais' : 'Ver menos';
+      });
+      return;
+    }
+
+    // === CASO TEXTO CORRIDO ===
+    if (texto) {
+      const limit = 220;
+      const full = texto.textContent.trim();
+      if (full.length <= limit) {
+        btn.style.display = 'none';
+        return;
+      }
+
+      const short = full.slice(0, limit) + '...';
+      texto.textContent = short;
+
+      btn.addEventListener('click', () => {
+        const expanded = btn.textContent === 'Ver menos';
+        texto.textContent = expanded ? short : full;
+        btn.textContent = expanded ? 'Ver mais' : 'Ver menos';
+      });
+    }
+  });
+});
 

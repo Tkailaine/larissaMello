@@ -438,6 +438,25 @@ text-align: left;
   opacity: 1;
 }
 
+.servico-card ul{
+  list-style: none;
+}
+
+.servico-card li{
+  margin: 10px 0;
+}
+
+.btn-vermais {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 6px;
+}
+
+
 .servico-topo {
   display: flex;
   align-items: center;
@@ -567,7 +586,7 @@ form button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   justify-content: start; /* alinha cards à esquerda, evitando espaçamento gigante */
-  gap: 20px 16px; /* 20px vertical, 16px horizontal */
+  gap: 50px 16px; /* 20px vertical, 16px horizontal */
   max-width: 1200px;
   margin: 0 auto;
 }
