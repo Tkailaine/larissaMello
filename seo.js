@@ -3,7 +3,7 @@ const { SitemapStream, streamToPromise } = require("sitemap");
 const fs = require("fs");
 
 // URL base do seu site
-const hostname = "https://cesarmicheli.com.br/";
+const hostname = "https://advocacialarissamello.com.br";
 
 // Cria o stream do sitemap
 const sitemapStream = new SitemapStream({ hostname });
