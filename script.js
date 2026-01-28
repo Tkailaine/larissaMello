@@ -19,7 +19,8 @@ document.querySelectorAll('.menu-mobile a').forEach(link => {
 const projetos = [ 
   { nome: "Mundo da Lua", link: "https://pt.wikipedia.org/w/index.php?curid=7626678", imagem: "imagens/mundodalua.jpg" }, { nome: "O Shaolin do Sertão", link: "https://pt.wikipedia.org/w/index.php?curid=6247830", imagem: "imagens/shaolin.jpg" }, 
   { nome: "Perfekta: Uma Aventura da Escola de Gênios", link: "https://pt.wikipedia.org/wiki/Perfekta:_Uma_Aventura_da_Escola_de_G%C3%AAnios", imagem: "imagens/perfekta.jpg" },
-  { nome: "Shark Tank", link: "https://pt.wikipedia.org/w/index.php?curid=4640077", imagem: "imagens/shark.jpg" }, 
+  { nome: "Shark Tank", link: "https://pt.wikipedia.org/w/index.php?curid=4640077", imagem: "imagens/shark.jpg" },
+  { nome: "Shark Tank Brasil Versão Creators", link: "#", imagem: "imagens/sharktank.jpg" },  
   { nome: "Túnel do Amor", link: "https://pt.wikipedia.org/w/index.php?curid=7110650", imagem: "imagens/tuneldoamor.jpg" },{ nome: "Ilhados com a Sogra", link: "https://pt.wikipedia.org/wiki/Ilhados_com_a_Sogra", imagem: "imagens/ilhados.jpg" },
   { nome: "Tem que Suar", link: "https://pt.wikipedia.org/wiki/Tem_que_Suar", imagem: "imagens/temquesuar.jpeg" },
   { nome: "O Dono do Lar", link: "#", imagem: "imagens/donodolar.jpeg" },
@@ -30,7 +31,7 @@ const projetos = [
   // Adicione mais projetos aqui
 ];
 let paginaAtual = 0;
-const MAX_POR_PAGINA = 12;
+const MAX_POR_PAGINA = 13;
 
 function renderizarProjetos() {
   const grade = document.getElementById("grade-videos");
